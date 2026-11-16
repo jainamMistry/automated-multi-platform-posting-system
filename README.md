@@ -141,9 +141,17 @@ python -m pytest -v
 - WordPress content is HTML-escaped; message content is validated (length, single public http(s) URL, no localhost/private IPs/credentials in URLs).
 - The API has no authentication of its own: put it behind an authenticated gateway before exposing it, because live mode publishes to your accounts.
 
-## Verification status (honest summary)
+## Verification Status (Honest Summary)
+
 | Integration | Status |
 |---|---|
-| Demo mode (all five) | ✅ Verified: real server run, `/docs` = 200, five `simulated` results, no credentials |
-| Live: all five platforms | ⚠️ Implemented from the official API docs and verified **against mocked HTTP only**. Not executed against the real services (no accounts/credentials were available when this was built). Needs a first real run with your credentials. |
-| Least certain | Hashnode (`publishPost` response fields `id/slug/url/publishedAt`, and whether your plan requires extra input) and DEV.to's exact published-article response. |
+| Demo mode (all five platforms) | ✅ **Verified:** Tested on the local server through `/docs`. Received HTTP 200 with five `simulated` results. Confirmed that no external API calls or real posts were made. |
+| Bluesky (Live) | ✅ **Verified:** Successfully tested using real Bluesky account credentials. Confirmed live authentication and publishing through the API. |
+| Mastodon (Live) | ⚠️ **Implemented:** Based on official API documentation and tested against mocked HTTP responses. Real-world publishing is pending. |
+| DEV.to (Live) | ⚠️ **Implemented:** Based on official API documentation and tested against mocked HTTP responses. Real-world publishing is pending. |
+| Hashnode (Live) | ⚠️ **Implemented:** Based on official API documentation and tested against mocked HTTP responses. Real-world publishing is pending. |
+| WordPress (Live) | ⚠️ **Implemented:** Based on official API documentation and tested against mocked HTTP responses. Real-world publishing is pending. |
+
+**Remaining verification:** Mastodon, DEV.to, Hashnode, and WordPress require testing with valid account credentials and real API requests.
+
+**Least certain areas:** Hashnode's `publishPost` response fields (`id`, `slug`, `url`, `publishedAt`) and DEV.to's exact published-article response should be confirmed during real API testing.
