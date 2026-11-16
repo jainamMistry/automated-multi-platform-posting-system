@@ -1,0 +1,22 @@
+INFO:     Started server process [443]
+INFO:     Waiting for application startup.
+2026-11-16 09:32:19,638 INFO    app.main - Started in DEMO mode
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:4000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:59978 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59992 - "GET /health HTTP/1.1" 200 OK
+2026-11-16 09:32:22,326 INFO    app.services.posting_service - Posting to 5 platforms in DEMO mode
+2026-11-16 09:32:22,327 INFO    app.services.posting_service - [DEMO] Bluesky: simulated (nothing published)
+2026-11-16 09:32:22,327 INFO    app.services.posting_service - [DEMO] Mastodon: simulated (nothing published)
+2026-11-16 09:32:22,327 INFO    app.services.posting_service - [DEMO] DEV.to: simulated (nothing published)
+2026-11-16 09:32:22,327 INFO    app.services.posting_service - [DEMO] Hashnode: simulated (nothing published)
+2026-11-16 09:32:22,327 INFO    app.services.posting_service - [DEMO] WordPress: simulated (nothing published)
+INFO:     127.0.0.1:60000 - "POST /posting HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60016 - "POST /posting HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:60028 - "POST /posting HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:60042 - "POST /posting HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:60056 - "POST /posting HTTP/1.1" 422 Unprocessable Content
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [443]
